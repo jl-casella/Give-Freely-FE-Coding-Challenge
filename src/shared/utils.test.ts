@@ -18,6 +18,25 @@ const WEBSITES_MOCK = {
   }
 }
 
+export const SEARCH_RESULT_MOCK = `
+  <div>
+  <div>
+    <div>
+    <div>
+        <a href="https://www.expedia.com.ar">tripadvisor.com
+        <div>
+          <div>
+            <span class="test">tripadvisor.com</span>
+            <cite>https://www.tripadvisor.com.ar</cite>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+`
+
 describe("Utils ", () => {
   describe("Fetching websites", () => {
     it("should fetch the websites API", async () => {
@@ -96,24 +115,8 @@ describe("Utils ", () => {
     it("should get highlights if they are found", () => {
       const mocks = [{ name: 'Tripadvisor', url: 'www.tripadvisor.com', messages: [] }]
 
-      document.body.innerHTML =
-        '<div>' +
-        ' <div>' +
-        '  <div>' +
-        '   <div>' +
-        '     <a href="https://www.expedia.com.ar">tripadvisor.com' +
-        '       <div>' +
-        '         <div>' +
-        '           <span class="test">tripadvisor.com</span>' +
-        '           <cite>https://www.expedia.com.ar</cite>' +
-        '         </div>' +
-        '       </div>' +
-        '      </a>' +
-        '    </div>' +
-        '   </div>' +
-        '  </div>' +
-        '</div>';
-
+      document.body.innerHTML = SEARCH_RESULT_MOCK
+        
       const searchResults = getSearchHighlights({ websites: mocks })
       
       expect(searchResults).toHaveLength(1);

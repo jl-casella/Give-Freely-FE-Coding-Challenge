@@ -1,11 +1,11 @@
-import bellImage from "data-base64:~assets/bell.png"
 import React, { useCallback, useEffect, useState } from "react"
 
 import type { WebsiteProps } from "../../../shared/types"
 import { getARandomMessage, getSearchHighlights } from "../../../shared/utils"
 import { Modal } from "../modal"
+import bellImage from "./bellImage"
 
-interface BellProps {
+export interface BellProps {
   hostname?: string
   websites: WebsiteProps[]
 }
@@ -65,7 +65,8 @@ function Bell({ hostname, websites }: BellProps) {
             right: 15,
             bottom: 15,
             borderRadius: 20
-          }}>
+          }}
+          onClick={handleOpen}>
           <img
             style={{
               width: 40,
@@ -74,7 +75,6 @@ function Bell({ hostname, websites }: BellProps) {
             }}
             src={bellImage}
             alt="Bell image"
-            onClick={handleOpen}
           />
         </div>
       ) : null}

@@ -70,10 +70,21 @@ export const getSearchHighlights = ({ websites }: GetSearchHighlightsProps) => {
   }
 
   const searchResults: any[] = [...document.querySelectorAll("span")]
-    .filter(x => validURLS.indexOf("www." + x.innerHTML.replace(/\.com.*/, ".com")) > -1)
     .filter((s) => s.checkVisibility ? s.checkVisibility() : true)
     .map((x) => x.parentNode)
-    .filter((p) => p.querySelector("cite") !== null)
+    .filter((el) => {
+      const citeEement = el.querySelector("cite")
+
+      if (citeEement !== null) {
+        const parsedCiteElementUrl = citeEement.innerHTML
+          .replace("https://", "")
+          .replace("http://", "")
+          .replace(/\.com.*/, ".com")
+        return validURLS.indexOf(parsedCiteElementUrl) > -1 && el 
+      }
+
+      return
+    })
     .map((x) => x.parentNode)
     .map((x) => x.parentNode)
     .reduce(dedupReducer, [])

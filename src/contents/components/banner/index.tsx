@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from "react"
 import type { WebsiteProps } from "../../../shared/types"
 import { getARandomMessage, isAMatchingWebsite } from "../../../shared/utils"
 
-interface BannerProps {
+export interface BannerProps {
   hostname?: string
   websites: WebsiteProps[]
 }
@@ -40,8 +40,11 @@ function Banner({ hostname, websites }: BannerProps) {
         margin: 0,
         backgroundColor: "gray"
       }}>
-      <div>{message}</div>
-      <div style={{ cursor: "pointer", padding: 10 }} onClick={handleClose}>
+      <div className="message">{message}</div>
+      <div
+        className="close"
+        style={{ cursor: "pointer", padding: 10 }}
+        onClick={handleClose}>
         x
       </div>
     </div>

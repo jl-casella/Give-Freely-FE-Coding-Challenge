@@ -2,7 +2,7 @@ import React from "react"
 
 import type { WebsiteProps } from "../../../shared/types"
 
-interface ModalProps {
+export interface ModalProps {
   title?: WebsiteProps["name"]
   message: WebsiteProps["messages"][0]
   onClose: () => void
@@ -43,7 +43,9 @@ function Modal({ title, message, onClose }: ModalProps) {
             backgroundColor: "rgb(165 180 252 / 1)"
           }}>
           <div style={{ width: 44, paddingLeft: 10 }} />
-          <div style={{ color: "black" }}>{title ? title : ""}</div>
+          <div className="title" style={{ color: "black" }}>
+            {title ? title : ""}
+          </div>
           <div
             style={{
               width: 44,
@@ -52,17 +54,19 @@ function Modal({ title, message, onClose }: ModalProps) {
               color: "black",
               textAlign: "right"
             }}
+            className="close"
             onClick={onClose}>
             x
           </div>
         </div>
 
         <div
-          id="body"
+          id="content"
           style={{
             padding: 10,
             color: "black"
-          }}>
+          }}
+          className="message">
           {message}
         </div>
       </div>
