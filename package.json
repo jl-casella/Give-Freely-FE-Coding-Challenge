@@ -7,23 +7,55 @@
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
-    "package": "plasmo package"
+    "package": "plasmo package",
+    "test": "CI=true react-scripts test --testResultsProcessor='jest-junit' --verbose ",
+    "test:watch": "react-scripts test --verbose --watchAll"
   },
   "dependencies": {
+    "@plasmohq/storage": "^1.6.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "classnames": "^2.3.2",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.11.0",
+    "jest": "^26.6.0",
+    "jest-enzyme": "^7.1.2",
+    "jest-junit": "^11.1.0",
     "plasmo": "0.71.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-scripts": "4.0.3"
   },
   "devDependencies": {
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.4",
     "@types/chrome": "0.0.227",
+    "@types/jest": "^24.0.24",
     "@types/node": "18.15.11",
     "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
     "prettier": "2.8.7",
-    "typescript": "5.0.3",
-    "@plasmohq/prettier-plugin-sort-imports": "3.6.4"
+    "tailwindcss": "^3.3.2",
+    "typescript": "5.0.3"
+  },
+  "jest-junit": {
+    "outputName": "./test-results.xml",
+    "suiteName": "jest tests",
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "titleTemplate": "{title}",
+    "ancestorSeparator": " › "
   },
   "manifest": {
+    "permissions": [
+      "storage",
+      "declarativeContent",
+      "activeTab",
+      "scripting"
+    ],
     "host_permissions": [
       "https://*/*"
     ]

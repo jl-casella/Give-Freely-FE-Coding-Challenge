@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="17" failures="0" time="0.984">
+  <testsuite name="src/popup/index.test.tsx" errors="0" failures="0" skipped="0" timestamp="2023-06-18T23:25:04" time="0.583" tests="10">
+    <testcase classname="Popup › Initial state" name="should render the &lt;Popup&gt; component" time="0.024">
+    </testcase>
+    <testcase classname="Popup › Initial state" name="should render the &lt;Header&gt; component" time="0.004">
+    </testcase>
+    <testcase classname="Popup › Initial state" name="should render the &lt;List&gt; component" time="0.005">
+    </testcase>
+    <testcase classname="Popup › Initial state" name="should NOT render the &lt;Messages&gt; component" time="0.002">
+    </testcase>
+    <testcase classname="Popup › Messages state" name="should render all the websites" time="0.003">
+    </testcase>
+    <testcase classname="Popup › Messages state" name="should render the &lt;Messages&gt; component once a website is clicked" time="0.005">
+    </testcase>
+    <testcase classname="Popup › Messages state" name="should render all the messages in the &lt;Messages&gt; component" time="0.002">
+    </testcase>
+    <testcase classname="Popup › Go Back to initial state" name="should NOT render Go back element on the Initial state &lt;Header&gt;" time="0.001">
+    </testcase>
+    <testcase classname="Popup › Go Back to initial state" name="should render Go back element on the Messages state &lt;Header&gt;" time="0.002">
+    </testcase>
+    <testcase classname="Popup › Go Back to initial state" name="should Go back to the Initial state once clicked" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/shared/utils.test.ts" errors="0" failures="0" skipped="0" timestamp="2023-06-18T23:25:04" time="0.147" tests="7">
+    <testcase classname="Utils  › Fetching websites" name="should fetch the websites API" time="0.001">
+    </testcase>
+    <testcase classname="Utils  › Fetching websites" name="should fetch the websites API and return the websites" time="0.001">
+    </testcase>
+    <testcase classname="Utils  › Matching websites" name="should NOT match an invalid website" time="0">
+    </testcase>
+    <testcase classname="Utils  › Matching websites" name="should match an valid website" time="0">
+    </testcase>
+    <testcase classname="Utils  › Get a random message" name="should get a valid randon website message" time="0">
+    </testcase>
+    <testcase classname="Utils  › Get the Google search highlights" name="should NOT get highlights if they are NOT found" time="0.003">
+    </testcase>
+    <testcase classname="Utils  › Get the Google search highlights" name="should get highlights if they are found" time="0.003">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,10 @@
+@config "../cfg/tailwind.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: white;
+  border: 2px solid indigo;
+}
